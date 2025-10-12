@@ -154,7 +154,7 @@ The portfolio is optimized for the following breakpoints:
 - **Email**: [aliqassabuk@gmail.com](mailto:aliqassabuk@gmail.com)
 - **LinkedIn**: [linkedin.com/in/alaa-qassab-524a78244](https://www.linkedin.com/in/alaa-qassab-524a78244/)
 - **GitHub**: [github.com/AliQassab](https://github.com/AliQassab)
-- **Portfolio**: [View Live Site](#) _(Add your deployed URL here)_
+- **Portfolio**: [View Live Site](https://qaliportfolio.netlify.app/)
 
 ## 🙏 Acknowledgments
 
