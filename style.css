@@ -618,15 +618,34 @@ p:not(:last-child) {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
-.cv-download {
-  background: linear-gradient(135deg, #d4af37, #d5ad29);
-  border-color: #d4af37;
-  color: #fff;
+.cv-container {
+  margin-top: 4rem;
+  text-align: center;
 }
-.cv-download:hover {
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.8rem 4rem;
+  background: linear-gradient(135deg, #d4af37, #d5ad29);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.5rem 2rem rgba(212, 175, 55, 0.4);
+  border: 2px solid #d4af37;
+}
+.btn-cv:hover {
   background: linear-gradient(135deg, #e5c047, #e6bd39);
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 1.5rem 3rem rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 3rem rgba(212, 175, 55, 0.5);
+}
+.btn-cv i {
+  font-size: 2rem;
 }
 .footer {
   background-color: #0f0d0a;

@@ -155,6 +155,10 @@
   .card-heading {
     font-size: 1.7rem;
   }
+  .btn-cv {
+    padding: 1.5rem 3rem;
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -283,6 +287,13 @@
     font-size: 1.4rem;
   }
   .card-heading {
+    font-size: 1.8rem;
+  }
+  .btn-cv {
+    padding: 1.5rem 2.5rem;
+    font-size: 1.3rem;
+  }
+  .btn-cv i {
     font-size: 1.8rem;
   }
 }
