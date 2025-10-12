@@ -1,81 +1,31 @@
-*,
+/* Additional reset styles not in critical CSS */
 *::after,
 *::before {
-  padding: 0;
-  margin: 0;
   box-sizing: inherit;
   list-style: none;
   text-decoration: none;
 }
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
+
+/* Additional body property */
 body {
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
-  padding: 3rem;
-  font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1.7;
-  color: #f5f3f0;
-  background-color: #1a1612;
-  /* position: relative; */
 }
+/* Additional body state not in critical CSS */
 body.menu-open {
   overflow: hidden;
 }
-.container {
-  max-width: 192rem;
-  width: 90%;
-  margin: 0 auto;
-}
 
+/* Additional header properties not in critical CSS */
 .header {
-  height: 95vh;
-  min-height: 600px;
-
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(131, 117, 78, 0.85),
-      rgba(107, 91, 71, 0.85)
-    ),
-    url(img/aleppo.jpeg);
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo {
-  width: 5rem;
-  height: 5rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  padding: 0.8rem;
-  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
-}
-.nav-bar {
-  width: 100%;
-  position: relative;
-  height: 7rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* Additional nav properties not in critical CSS */
 .main-nav-list {
-  width: 70rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .main-nav-link {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 600;
   transition: color 0.3s ease;
 }
 .main-nav-link:hover {
@@ -110,31 +60,12 @@ body.menu-open {
   display: none;
 }
 
-.text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.title {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-}
+/* Additional title animations not in critical CSS */
 .title-main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 700;
-  letter-spacing: 2.2rem;
   text-align: center;
   animation: moveToLeft 3s ease-in;
 }
 .title-sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: 1.7rem;
   animation: moveToRight 3s ease-in;
 }
 
@@ -159,17 +90,6 @@ body.menu-open {
   80% {
     transform: translateX(-2rem);
   }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes moveButton {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
   100% {
     opacity: 1;
     transform: translate(0);
@@ -373,6 +293,7 @@ p:not(:last-child) {
 .fa-regular,
 .fa-brands.fa-node {
   width: 25%;
+  height: auto;
   margin: 0 auto;
   margin-bottom: 2rem;
 }
@@ -658,6 +579,7 @@ p:not(:last-child) {
 }
 .footer-logo img {
   width: 100%;
+  height: auto;
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }

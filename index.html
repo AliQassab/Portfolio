@@ -17,11 +17,19 @@
       fetchpriority="high"
     />
 
-    <!-- Optimized Google Fonts with display=swap -->
+    <!-- Defer Google Fonts to avoid render blocking -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Font Awesome - Deferred to not block render -->
     <link
@@ -37,6 +45,161 @@
       />
     </noscript>
     <!-- Critical CSS inlined for faster initial render -->
+    <style>
+      /* Critical font fallback to prevent layout shift */
+      @font-face {
+        font-family: "Lato-fallback";
+        src: local("Arial");
+        font-weight: 100 900;
+        size-adjust: 97.5%;
+        ascent-override: 99%;
+        descent-override: 20%;
+        line-gap-override: 0%;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Lato-fallback", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Arial, sans-serif;
+        padding: 3rem;
+        font-size: 1.6rem;
+        color: #f5f3f0;
+        background-color: #1a1612;
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+
+      /* Apply Lato when loaded */
+      .fonts-loaded body {
+        font-family: "Lato", "Lato-fallback", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Arial, sans-serif;
+      }
+
+      .header {
+        height: 95vh;
+        min-height: 600px;
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(131, 117, 78, 0.85),
+            rgba(107, 91, 71, 0.85)
+          ),
+          url(./img/aleppo.jpeg);
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      }
+
+      .container {
+        max-width: 192rem;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .title {
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 6rem;
+        text-align: center;
+      }
+
+      .title-main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 700;
+        letter-spacing: 2.2rem;
+      }
+
+      .title-sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 1.7rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 1.5rem 4rem;
+        text-transform: uppercase;
+        border-radius: 10rem;
+        transition: all 0.2s;
+        text-decoration: none;
+      }
+
+      .btn-white {
+        background-color: #fff;
+        color: #2a2520;
+        border: 2px solid #2a2520;
+      }
+
+      .text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .nav-bar {
+        width: 100%;
+        position: relative;
+        height: 7rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 5rem;
+        height: 5rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        padding: 0.8rem;
+        box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+        object-fit: contain;
+      }
+
+      .main-nav-list {
+        width: 70rem;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+      }
+
+      .main-nav-link {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .btn-animation {
+        animation: moveButton 0.5s ease-out 0.7s;
+        animation-fill-mode: backwards;
+      }
+
+      @keyframes moveButton {
+        0% {
+          opacity: 0;
+          transform: translateY(3rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+    </style>
 
     <!-- Defer non-critical CSS for faster initial render -->
     <link
@@ -83,7 +246,13 @@
       <div class="container nav-container">
         <div class="nav-bar">
           <div class="logo-box">
-            <img src="./img/logo.png" class="logo" alt="logo-image" />
+            <img
+              src="./img/logo.png"
+              class="logo"
+              alt="logo-image"
+              width="628"
+              height="650"
+            />
           </div>
           <nav class="main-nav phone-nav">
             <ul class="main-nav-list">
@@ -241,6 +410,8 @@
               src="./img/html.png"
               alt="HTML/CSS"
               class="brands"
+              width="225"
+              height="225"
               loading="lazy"
             />
             <h3>html/css</h3>
@@ -265,6 +436,8 @@
               src="./img/react.png"
               alt="React"
               class="brands"
+              width="225"
+              height="225"
               loading="lazy"
             />
             <h3>react</h3>
@@ -298,6 +471,8 @@
                 src="./img/chat-img.png"
                 class="card-img"
                 alt="Group Chat App"
+                width="1788"
+                height="1202"
                 loading="lazy"
               />
               <h3 class="card-heading">
@@ -341,6 +516,8 @@
                 src="./img/shopping-list.png"
                 class="card-img"
                 alt="Shopping List App"
+                width="1788"
+                height="1202"
                 loading="lazy"
               />
               <h3 class="card-heading">
@@ -384,6 +561,8 @@
                 src="./img/wether.png"
                 class="card-img"
                 alt="Weather App"
+                width="1788"
+                height="1202"
                 loading="lazy"
               />
               <h3 class="card-heading">
@@ -477,7 +656,13 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-logo">
-          <img src="./img/logo.png" alt="Ali Qassab Logo" loading="lazy" />
+          <img
+            src="./img/logo.png"
+            alt="Ali Qassab Logo"
+            width="628"
+            height="650"
+            loading="lazy"
+          />
         </div>
         <div class="footer-content">
           <p class="footer-text">
@@ -486,6 +671,20 @@
         </div>
       </div>
     </footer>
+
+    <!-- Font loading detection to prevent layout shift -->
+    <script>
+      // Add fonts-loaded class when Lato font is available
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          document.documentElement.classList.add("fonts-loaded");
+        });
+      } else {
+        // Fallback for browsers without Font Loading API
+        document.documentElement.classList.add("fonts-loaded");
+      }
+    </script>
+
     <script src="main.js"></script>
   </body>
 </html>
