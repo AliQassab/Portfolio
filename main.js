@@ -1,35 +1,40 @@
 const openMenu = document.querySelector(".fa-bars");
 const closeMenu = document.querySelector(".fa-xmark");
 const menu = document.querySelector(".main-nav-list");
+
 function toggleMenu() {
   menu.classList.toggle("show-menu");
+  document.body.classList.toggle("menu-open");
+
   openMenu.style.display = menu.classList.contains("show-menu")
     ? "none"
     : "block";
-    closeMenu.style.display = menu.classList.contains("show-menu")
-      ? "block"
-      : "none";
+  closeMenu.style.display = menu.classList.contains("show-menu")
+    ? "block"
+    : "none";
 }
+
 openMenu.addEventListener("click", toggleMenu);
 closeMenu.addEventListener("click", toggleMenu);
 // nav menu color function
 const links = document.querySelectorAll(".main-nav-link");
-// const navMenu = document.querySelector(".main-nav-list");
+
 function handleLinkClick(e) {
   links.forEach((link) => {
     link.classList.remove("active-link");
-    // navMenu.style.display='none'
-   
   });
 
   e.target.classList.add("active-link");
-  console.log('clicked')
+
+  // Close mobile menu when a link is clicked
+  if (menu.classList.contains("show-menu")) {
+    toggleMenu();
+  }
 }
 
 links.forEach((link) => {
   link.addEventListener("click", handleLinkClick);
 });
-
 
 // popup contact function
 const popupContent = document.querySelectorAll(".popup-content");
@@ -55,7 +60,7 @@ document.querySelectorAll(".close-popup").forEach((close, i) => {
   });
 });
 
-// images slider 
+// images slider
 const slides = document.querySelectorAll(".photo");
 
 let currentSlide = 0;
@@ -71,11 +76,7 @@ function showSlide() {
 }
 showSlide();
 
-//date
+// Display current year in footer
 const displayDate = document.querySelector(".date");
-
-const date = new Date();
-const day = date.getDate();
-const month = date.getMonth() + 1;
-const year = date.getFullYear();
-displayDate.textContent = `${day} / ${month} / ${year}`;
+const year = new Date().getFullYear();
+displayDate.textContent = year;
