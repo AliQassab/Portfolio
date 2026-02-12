@@ -262,7 +262,7 @@ p:not(:last-child) {
   background-color: #2a2520;
   color: #f5f3f0;
   height: auto;
-  width: 18%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -275,7 +275,9 @@ p:not(:last-child) {
   transform: skewY(5deg);
 }
 .fa-regular,
-.fa-brands.fa-node {
+.fa-brands.fa-node,
+.fa-solid,
+.fa-brands.fa-aws {
   font-size: 4rem;
   margin-bottom: 2rem;
 }
@@ -285,13 +287,21 @@ p:not(:last-child) {
 .fa-brands.fa-node {
   color: rgb(5, 176, 5);
 }
+.fa-solid.fa-database {
+  color: #4a90e2;
+}
+.fa-brands.fa-aws {
+  color: #ff9900;
+}
 .skill-card:hover {
   transform: translateY(-1rem) scale(1.02);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .brands,
 .fa-regular,
-.fa-brands.fa-node {
+.fa-brands.fa-node,
+.fa-solid,
+.fa-brands.fa-aws {
   width: 25%;
   height: auto;
   margin: 0 auto;

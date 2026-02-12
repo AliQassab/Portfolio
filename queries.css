@@ -265,7 +265,9 @@
   }
   .brands,
   .fa-regular,
-  .fa-brands.fa-node {
+  .fa-brands.fa-node,
+  .fa-solid,
+  .fa-brands.fa-aws {
     width: 15%;
   }
   .card {
@@ -319,7 +321,7 @@
 }
 @media (min-width: 1201px) and (max-width: 1400px) {
   .skill-card {
-    width: 19%;
+    width: 16%;
   }
 }
 
