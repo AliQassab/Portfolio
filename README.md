@@ -138,7 +138,7 @@ The portfolio is optimized for the following breakpoints:
 - **Large Desktop**: 1201px - 1400px
 - **Extra Large**: > 1400px
 
-## 🎨 Color Palette:
+## 🎨 Color Palette
 
 - **Primary Gold**: `#d4af37` - Accent color for links and highlights
 - **Dark Brown**: `#83754e` - Headers and borders
