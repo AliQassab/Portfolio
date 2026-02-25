@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website showcasing my journey from accountant to full-stack developer, highlighting my technical skills and featured projects.
 
-![Portfolio Screenshot](img/mainScreenShot.png)
-
 ## 🚀 About Me
 
 I'm a full-stack developer with a unique background combining over 10 years of accounting experience with 4+ years of web development expertise. My journey from business owner to developer has given me a rare blend of technical skills and business acumen, allowing me to build solutions that are not only technically sound but also drive real business results.
@@ -53,13 +51,18 @@ Portfolio/
 ├── style.css              # Main stylesheet
 ├── queries.css            # Responsive media queries
 ├── main.js                # JavaScript functionality
-├── Alaa_Qassab_CV.pdf    # Downloadable CV
+├── CV-2026.pdf            # Downloadable CV
 ├── img/                   # Image assets
 │   ├── logo.png
 │   ├── aleppo.jpeg
+│   ├── photo-1.jpeg
+│   ├── photo-2.JPG
+│   ├── photo-3.jpeg
 │   ├── chat-img.png
 │   ├── shopping-list.png
-│   └── wether.png
+│   ├── CYF.png
+│   ├── DB.png
+│   └── react.png
 └── README.md              # Documentation
 ```
 
@@ -71,7 +74,6 @@ Portfolio/
 4. **Projects** - Featured work including:
    - Group Chat App (WebSocket real-time communication)
    - Shopping List (React with state management)
-   - Weather App (API integration with geolocation)
 5. **Contact** - Social links and CV download
 
 ## 🚀 Getting Started
@@ -166,4 +168,4 @@ The portfolio is optimized for the following breakpoints:
 
 ⭐ **If you like this portfolio, feel free to star the repository!**
 
-_Last Updated: October 2026_
+_Last Updated: February 2026_

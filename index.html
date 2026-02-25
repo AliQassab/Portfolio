@@ -21,7 +21,14 @@
       content="Junior Full-Stack Developer with strong foundations in JavaScript, React, Node.js, PostgreSQL, and MongoDB. Experienced in building full-stack applications in collaborative, Agile team environments."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./img/logo.png" />
+    <meta property="og:image" content="https://qaliportfolio.netlify.app/img/logo.png" />
+    <meta property="og:url" content="https://qaliportfolio.netlify.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ali Qassab - Junior Full-Stack Developer Portfolio" />
+    <meta name="twitter:description" content="Junior Full-Stack Developer with strong foundations in JavaScript, React, Node.js, PostgreSQL, and MongoDB." />
+    <meta name="twitter:image" content="https://qaliportfolio.netlify.app/img/logo.png" />
+
+    <link rel="canonical" href="https://qaliportfolio.netlify.app/" />
 
     <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -173,7 +180,7 @@
         border: 2px solid #2a2520;
       }
 
-      .text-box {
+      .hero-content {
         position: absolute;
         top: 40%;
         left: 50%;
@@ -263,27 +270,27 @@
     <header class="header">
       <div class="container nav-container">
         <div class="nav-bar">
-          <div class="logo-box">
+          <div class="nav-logo">
             <img
               src="./img/logo.png"
               class="logo"
-              alt="logo-image"
+              alt="Ali Qassab logo"
               width="628"
               height="650"
             />
           </div>
-          <nav class="main-nav phone-nav">
+          <nav class="main-nav">
             <ul class="main-nav-list">
               <li><a href="#" class="main-nav-link active-link">home</a></li>
               <li>
                 <a href="#section-about" class="main-nav-link">about me</a>
               </li>
-              <li><a href="#section-skill" class="main-nav-link">skills</a></li>
+              <li><a href="#section-skills" class="main-nav-link">skills</a></li>
               <li>
                 <a href="#section-projects" class="main-nav-link">projects</a>
               </li>
               <li>
-                <a href="#section-stories" class="main-nav-link">contact</a>
+                <a href="#section-contact" class="main-nav-link">contact</a>
               </li>
               <li>
                 <a
@@ -299,12 +306,16 @@
             </ul>
           </nav>
         </div>
-        <div class="btn-nav">
-          <i class="fa-solid fa-bars"></i>
-          <i class="fa-solid fa-xmark"></i>
+        <div class="nav-toggle">
+          <button class="btn-hamburger" aria-label="Open navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+          <button class="btn-close-nav" aria-label="Close navigation">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
-      <div class="text-box">
+      <div class="hero-content">
         <h1 class="title">
           <span class="title-main">ali qassab</span>
           <span class="title-sub">junior full-stack developer</span>
@@ -314,6 +325,7 @@
         >
       </div>
     </header>
+    <main>
     <section id="section-about">
       <div class="overlay"></div>
       <div class="container">
@@ -328,12 +340,12 @@
               career-changer with a background in business ownership and
               accounting, which has equipped me with strong analytical thinking,
               attention to detail, and a practical approach to problem-solving.
-              <button class="popup">Read more</button>
+              <button class="popup-trigger">Read more</button>
             </p>
-            <div class="popup-content">
-              <div class="close-popup">X</div>
+            <div class="popup-modal" role="dialog" aria-modal="true" aria-labelledby="popup-journey-title">
+              <button class="modal-close" aria-label="Close dialog">×</button>
 
-              <h3>MY PROFESSIONAL JOURNEY</h3>
+              <h3 id="popup-journey-title">MY PROFESSIONAL JOURNEY</h3>
 
               <p>
                 I am a Junior Full-Stack Developer with strong foundations in
@@ -370,12 +382,12 @@
               applications that deliver exceptional user experiences. I
               continuously expand my skill set and embrace new technologies to
               stay at the forefront of web development.
-              <button class="popup">Read more</button>
+              <button class="popup-trigger">Read more</button>
             </p>
-            <div class="popup-content">
-              <div class="close-popup">X</div>
+            <div class="popup-modal" role="dialog" aria-modal="true" aria-labelledby="popup-drives-title">
+              <button class="modal-close" aria-label="Close dialog">×</button>
 
-              <h3>WHAT DRIVES ME</h3>
+              <h3 id="popup-drives-title">WHAT DRIVES ME</h3>
 
               <p>
                 I'm passionate about creating elegant solutions to complex
@@ -416,7 +428,7 @@
               />
               <img
                 class="photo"
-                src="./img/photo-1.png"
+                src="./img/photo-1.jpeg"
                 alt="Ali Qassab"
                 loading="lazy"
               />
@@ -425,16 +437,16 @@
         </div>
       </div>
     </section>
-    <section id="section-skill">
+    <section id="section-skills">
       <div class="container">
-        <h2 class="heading-skills">technical skills</h2>
+        <h2 class="skills-title">technical skills</h2>
 
         <div class="row">
           <div class="skill-card">
             <img
               src="./img/html.png"
               alt="HTML/CSS"
-              class="brands"
+              class="skill-icon"
               width="225"
               height="225"
               loading="lazy"
@@ -460,7 +472,7 @@
             <img
               src="./img/react.png"
               alt="React"
-              class="brands"
+              class="skill-icon"
               width="225"
               height="225"
               loading="lazy"
@@ -489,13 +501,12 @@
           <div class="skill-card">
             <img
               src="./img/DB.png"
-              alt="HTML/CSS"
-              class="brands"
+              alt="Databases"
+              class="skill-icon"
               width="225"
               height="225"
               loading="lazy"
             />
-            <!-- <i class="fa-solid fa-database"></i> -->
             <h3>Databases</h3>
             <p>
               Experience with PostgreSQL for relational database design,
@@ -525,7 +536,7 @@
           <!-- Featured Project -->
           <div class="card featured-card">
             <div class="featured-badge">Featured</div>
-            <div class="front-card">
+            <div class="card-front">
               <img
                 src="./img/chat-img.png"
                 class="card-img"
@@ -535,7 +546,7 @@
                 loading="lazy"
               />
               <h3 class="card-heading">
-                <span class="span-card card-1">Group Chat App</span>
+                <span class="card-label">Group Chat App</span>
               </h3>
               <div class="card-details">
                 <ul>
@@ -547,9 +558,9 @@
                 </ul>
               </div>
             </div>
-            <div class="back-card b-c-1">
-              <div class="back-card-details">
-                <p class="back-text">check it out</p>
+            <div class="card-back card-back-gradient">
+              <div class="card-back-content">
+                <p class="card-back-label">check it out</p>
                 <a
                   href="https://aliqassab-websocket-frontend.hosting.codeyourfuture.io/"
                   class="btn btn-white"
@@ -557,7 +568,7 @@
                   rel="noopener"
                   >website</a
                 >
-                <p class="back-text">check the code</p>
+                <p class="card-back-label">check the code</p>
                 <a
                   href="https://github.com/AliQassab/Group-Chat"
                   class="btn btn-white"
@@ -570,7 +581,7 @@
           </div>
 
           <div class="card">
-            <div class="front-card">
+            <div class="card-front">
               <img
                 src="./img/shopping-list.png"
                 class="card-img"
@@ -580,7 +591,7 @@
                 loading="lazy"
               />
               <h3 class="card-heading">
-                <span class="span-card card-3">Shopping List</span>
+                <span class="card-label">Shopping List</span>
               </h3>
               <div class="card-details">
                 <ul>
@@ -592,9 +603,9 @@
                 </ul>
               </div>
             </div>
-            <div class="back-card b-c-3">
-              <div class="back-card-details">
-                <p class="back-text">check it out</p>
+            <div class="card-back card-back-gradient">
+              <div class="card-back-content">
+                <p class="card-back-label">check it out</p>
                 <a
                   href="https://aliqassab.github.io/shopping-list-react/"
                   class="btn btn-white"
@@ -602,7 +613,7 @@
                   rel="noopener"
                   >website</a
                 >
-                <p class="back-text">check the code</p>
+                <p class="card-back-label">check the code</p>
                 <a
                   href="https://github.com/AliQassab/shopping-list-react/tree/main"
                   class="btn btn-white"
@@ -615,7 +626,7 @@
           </div>
 
           <div class="card">
-            <div class="front-card">
+            <div class="card-front">
               <img
                 src="./img/CYF.png"
                 class="card-img"
@@ -625,7 +636,7 @@
                 loading="lazy"
               />
               <h3 class="card-heading">
-                <span class="span-card card-2">CYFoverflow</span>
+                <span class="card-label">CYFoverflow</span>
               </h3>
               <div class="card-details">
                 <ul>
@@ -637,9 +648,9 @@
                 </ul>
               </div>
             </div>
-            <div class="back-card b-c-2">
-              <div class="back-card-details">
-                <p class="back-text">check it out</p>
+            <div class="card-back card-back-gradient">
+              <div class="card-back-content">
+                <p class="card-back-label">check it out</p>
                 <a
                   href="https://cyfoverflow.hosting.codeyourfuture.io/"
                   class="btn btn-white"
@@ -647,7 +658,7 @@
                   rel="noopener"
                   >website</a
                 >
-                <p class="back-text">check the code</p>
+                <p class="card-back-label">check the code</p>
                 <a
                   href="https://github.com/fac30sb/CYFoverflow"
                   class="btn btn-white"
@@ -661,7 +672,7 @@
         </div>
       </div>
     </section>
-    <section id="section-stories">
+    <section id="section-contact">
       <div class="contact-content">
         <h2 class="contact-title">Let's Connect</h2>
         <p class="contact-subtitle">
@@ -704,14 +715,18 @@
             href="./CV-2026.pdf"
             class="btn-cv"
             download
-            aria-label="Download CV"
+            aria-label="Download CV as PDF"
           >
             <i class="fa-solid fa-file-pdf"></i>
-            <span>Download My CV</span>
+            <span class="btn-cv-text">
+              <span class="btn-cv-main">Download My CV</span>
+              <span class="btn-cv-sub">PDF · 2026</span>
+            </span>
           </a>
         </div>
       </div>
     </section>
+    </main>
     <footer class="footer">
       <div class="container">
         <div class="footer-logo">
@@ -725,7 +740,7 @@
         </div>
         <div class="footer-content">
           <p class="footer-text">
-            © <span class="date"></span> Ali Qassab. All rights reserved.
+            © <span class="footer-year"></span> Ali Qassab. All rights reserved.
           </p>
         </div>
       </div>
